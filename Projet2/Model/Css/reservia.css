@@ -1,4 +1,701 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
 *{
-    background-color: rgb(238, 238, 238);
+    font-family: 'Raleway',sans-serif;
+      
 }
 
+body{
+    margin: 0;
+}
+
+ul{
+    list-style-type: none;
+}
+h1{
+    font-size: 20px;
+}
+
+h2{
+    font-size: 18px;
+}
+p{
+    font-size: 14px;
+}
+
+a  
+{
+text-decoration: none;
+}
+
+header, main{
+	padding: 0 20px;
+}
+
+/* --- Début Header --- */
+header{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+header nav{
+    height: 100%;
+}
+
+
+
+.Logo{
+    width: 30%;
+}  
+
+.menu-right{
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+    margin: 0;
+}
+.menu-right li a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+	color:#d0d0d2;
+	text-decoration: none;
+    padding: 0 20px;
+    border-top: 3px #FFFF solid;
+    font-size: 14px;
+}
+.menu-right a.inscription{
+    font-weight: bold;
+    color: #0065fc;
+}
+.menu-right li a:hover, .menu-right li a.active{
+    color: #0065fc;
+    border-top: 3px #0065fc solid;
+}
+/* --- Fin Header --- */
+/* --- Début Main --- */
+
+main{
+    display: grid;
+    grid-template-columns: 6fr 3fr;
+    grid-gap: 20px;
+}
+
+.sectionrechercher {
+    grid-row: 1/2;
+    font-size: 12px;
+}
+
+.sectionrechercher h1{
+    margin-bottom: 10px;
+}
+
+.sectionrechercher p{
+    margin-bottom: 10px;
+}
+
+.sectionrechercher form{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center; 
+    margin: 15px 0;
+}
+
+.sectionrechercher form input{
+    border: none;
+    padding: 15px 15px;
+    font-weight: bold;
+    font-size: 15px;
+    width: 30%;
+} 
+.sectionrechercher form i{
+    border: none;
+    border-radius: 10px 0 0 10px;
+    padding: 15px 15px;
+    font-size: 14px;
+    color: black;
+    background-color: #efefef;
+    border: 2px solid #efefef;
+}
+
+.sectionrechercher form button{
+    background-color: #0065FC;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 0 15px 15px 0;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.Filtres{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    justify-content: flex-start;
+    gap: 20px;
+    font-size: 14px;
+}
+.Filtres h2{
+    font-size: 14px;
+}
+.Filtres ul{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 20px;
+}
+
+.Filtres .btn{
+    position: relative;
+    display: inline-block;
+    padding: 0 15px 0 10px;
+    border: 2px solid #efefef;
+    border-radius: 30px;
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.Filtres .btn:hover{
+    color: #0065FC;
+    background-color: #d6e7ff;
+    border-color: #d6e7ff;
+}
+
+.Filtres .btn:before{
+    display: inline-block;
+    position: relative;
+    right: 10px;
+    padding: 10px;
+    line-height: 1;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: #0065FC;
+    background-color: #d6e7ff;
+    border-radius: 50%;
+    outline: #d6e7ff 3px solid;
+    outline-offset: -1px;
+}
+
+.Filtres .icon-money:before{
+    content: "\f53a";
+    padding: 10px 8.5px;
+}
+
+.Filtres .icon-child:before{
+    content: "\f1ae";
+    padding: 10px 12px;
+}
+
+.Filtres .icon-heart:before{
+    content: "\f004";
+}
+
+.Filtres .icon-dog:before{
+    content: "\f6d3";
+}
+
+.sectionrechercher p.icon-info{
+    margin: 20px 0 0px 0;
+    padding: 0px 0px 0px 0px;
+}
+
+.sectionrechercher .icon-info::before{
+    margin-right: 10px;
+    padding: 3px 6px;
+    font-family: "Font Awesome 5 Free";
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 1;
+    content: "\f129";
+    color: #0065FC;
+    background-color: #ffffff;
+    border: 1px solid #efefef;
+    border-radius: 50%;
+}     
+
+/* --- Début Section H --- */
+
+#sectionhebergement{
+    grid-row-start: 2;
+    background-color: #F2F2F2;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+#sectionhebergement .hotel-cartes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+#sectionhebergement .hotel-photo{
+    height: 10em;
+}
+
+#sectionhebergement .hotel-photo img{
+    border-radius: 15px  15px 0 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.titlehebergement{
+    padding: 10px;
+    padding-bottom: 25px;
+    font-size: 20px;
+}
+
+#sectionhebergement a{
+    padding: 5px;
+    height: 100%;
+    display: block;
+    box-sizing: border-box;
+    color: #d0d0d2;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
+}
+
+.hotel-info h3{
+    color:black;
+    font-size: 16px;
+    padding: 0px 10px;
+    margin: 5px 5px;
+}
+
+.hotel-info p{
+    color:black;
+    font-size: 14px;
+    margin-left: 15px;
+}
+
+.hotel-info{
+    margin-top: 12px;
+}
+
+.hotel-etoile{
+    margin-left: 15px;  
+    margin-bottom: 10px; 
+    margin-top: 10px;
+    font-size: 12px; 
+}
+
+#sectionhebergement a i.checked{
+    color:#0065FC;
+}
+#sectionhebergement button{
+    margin: 30px 0 0 0;
+    padding: 0px;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    background: none;
+}
+/* --- Fin Section H --- */
+
+/* --- Début Section PP --- */
+
+.sectionpopulaire{
+    grid-row-start: 2;
+    padding: 20px;
+    background-color: #efefef;
+    border-radius: 20px;
+}
+
+.boxtitrepopulaire{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.boxtitrepopulaire i{
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.sectionpopulaire .hotel-cartes{
+    display: grid;
+    grid-template-columns: auto;
+    gap: 30px
+}
+
+.sectionpopulaire .hotel-photo{
+    width: 40%;
+}
+
+.sectionpopulaire .hotel-info{
+    width: 70%;
+    padding: 0.8em;
+    font-size: 0.85em;
+}
+
+.sectionpopulaire li a{
+    padding: 5px;
+    height: 100%;
+    display: flex;
+    box-sizing: border-box;
+    color: #d0d0d2;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
+    
+}
+.hotel-info-pp{
+    margin-top: 10px;
+    margin-left: 5px;
+    width: 60%;
+}
+.hotel-info-pp h3{
+    color:black;
+    font-size: 18px;
+    padding: 0px 10px;
+    margin: 5px 5px;
+}
+
+.hotel-info-pp p{
+    color:black;
+    font-size: 15px;
+    padding: 0px 10px;
+    margin: 5px 5px; 
+}
+
+.sectionpopulaire a i.checked {
+    color:#0065FC;
+}
+.sectionpopulaire .hotel-photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px 0 0 15px;
+}
+
+.sectionpopulaire .hotel-etoile{
+    margin-top: 10px;
+}
+
+/* --- FIN PP --- */
+/* --- Début Section activité --- */
+
+#sectionactivite{
+    display: grid;
+    grid-row: 3;
+    grid-column: 1/3;
+    margin: 0 0 3em;
+}
+
+#sectionactivite ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 5em);
+    gap: 2.5em;
+}
+
+#sectionactivite ul .carte-type1 {
+    grid-row: 1/6;
+}
+
+#sectionactivite ul .carte-type2 {
+    grid-row: 1/4;
+}
+
+#sectionactivite ul .carte-type3 {
+    grid-row: 4/6;
+}
+
+#sectionactivite ul .carte-type2 {
+    grid-row: 1/4;
+}
+
+#sectionactivite ul .carte-type3 {
+    grid-row: 4/6;
+}
+
+
+#sectionactivite a{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
+
+#sectionactivite img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+}
+
+#sectionactivite a h3{
+   color: black;
+   font-weight: bold;
+   padding-top: 15px;
+   padding-left: 15px;
+   padding-bottom: 15px;
+}
+/* --- Fin Section activité --- */
+/* --- Fin Main --- */
+/* --- Début Footer --- */
+
+footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    padding-top: 35px;
+    padding-left: 20px;
+    padding-bottom: 50px;
+    line-height: 25px;
+    background-color: #F2F2F2;
+}
+
+.titre1{
+    padding-left: 15px;
+}
+.titre2{
+    padding-left: 2px;
+    padding-bottom: 10px;
+}
+
+/* --- Fin Footer --- */
+
+
+/* Media queries */
+@media (max-width: 1270px) { 
+	.sectionrechercher {
+		grid-column: 1/3;
+		padding: 0 2em;
+	}
+
+	.sectionpopulaire {
+		grid-row: 2/3;
+		grid-column: 1/3;
+		padding: 2em;
+	}
+
+	.sectionpopulaire .hotel-cartes {
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 2em;
+	}
+
+	.sectionpopulaire .hotel-photo {
+		width: 50%;
+	}
+
+	.sectionpopulaire .hotel-info {
+		padding: 0.5em 1em;
+		font-size: 0.70em;
+	}
+
+	#sectionhebergement {
+		grid-row: 3/4;
+		grid-column: 1/3;
+		padding: 2em;
+	}
+
+	#sectionhebergement .hotel-cartes {
+		gap: 2em;
+	}
+
+	#sectionhebergement .hotel-photo {
+		height: 7em;
+	}
+
+	#sectionhebergement .hotel-info {
+		padding: 0.5em 0.8em;
+		font-size: 0.85em;
+	}
+
+	#sectionactivite {
+		grid-row: 4;
+	}
+
+	#sectionactivite ul {
+		grid-template-rows: repeat(5, 3em);
+	}
+
+	#sectionactivite a h3 {
+		font-size: 0.8em;
+	}
+	
+}
+
+@media (max-width: 810px) { 
+	.sectionRechercher {
+		grid-column: 1/3;
+	}
+
+	#hebergement {
+		grid-row-start: 3;
+		grid-column: 1/3;
+		padding: 2em;
+	}
+
+	#hebergement .hotel-cartes {
+		grid-template-rows: repeat(2, auto);
+		gap: 2em;
+	}
+
+	#hebergement .hotel-photo {
+		height: 5em;
+	}
+
+	#hebergement .hotel-info {
+		padding: 1em 0.6em;
+		font-size: 0.55em;
+	}
+
+    .sectionpopulaire .hotel-info-pp {
+        width: 70%;
+	}
+
+	.sectionpopulaire {
+		grid-row-start: 2;
+		grid-column: 1/3;
+	}
+
+	.sectionpopulaire .hotel-cartes {
+		grid-template-columns: auto;
+	}
+	#sectionactivite {
+		grid-row-start: 4;
+		grid-column: 1/3;
+	}
+
+	#sectionactivite ul {
+        grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(3, 10em);
+	}
+
+	#sectionactivite ul .carte-type1,
+	#sectionactivite ul .carte-type2,
+	#sectionactivite ul .carte-type3,
+	#sectionactivite ul .carte-type4,
+	#sectionactivite ul .carte-type5 {
+		grid-row: auto;
+	}
+
+	#sectionactivite a h3 {
+		font-size: 1em;
+	}
+}
+
+@media (max-width: 480px) {
+
+    header{
+        padding: 0 0 2em;
+		position: relative;
+		flex-flow: row wrap;
+		height: auto;
+    }
+
+    .Logo {
+		position: relative;
+		left: 2em;
+	}
+
+    header nav{
+        margin: 0.5em 0 0 0;
+		width: 100%;
+    } 
+
+    .menu-right{
+        flex-flow: unset;
+    }
+
+    .menu-right li {
+        width: 100%;
+    }
+
+    .menu-right li:last-child {
+        width: auto;
+    }
+
+    .menu-right a{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		color: #d0d0d2;
+		text-decoration: none;
+		padding: 5px 20px;
+		border:none;
+		border-bottom: 2px #d0d0d2 solid;
+		font-size: 0.85em;
+    }
+
+    .menu-right a.inscription{
+		font-weight: bold;
+		position: absolute;
+		display: flex;
+		padding: 0 2em;
+		right: 2em;
+		top: 1.4em;
+		color: #0065FC;
+		justify-content: flex-start;
+		height: auto;
+		border: none;
+    }
+
+    .menu-right li a {
+        
+        padding: 5px 20px;
+        color: #48484a;
+    }
+
+    .menu-right li a:hover, .menu-right li a.active {
+		color:#0065FC;
+        font-weight: bold;
+		border: none;
+		border-bottom: 2px #0065FC solid;
+	}
+
+	.menu-right li a.inscription:hover {
+		border:none;
+	}
+
+    #sectionhebergement .hotel-cartes {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        background-color: #FFFF;
+    }
+
+    #sectionhebergement .hotel-photo {
+        height: 9rem;
+    }
+
+    #sectionhebergement{
+        background-color: #FFFF;
+        padding: 0;
+    }   
+   
+    #sectionactivite ul {
+		grid-template-columns: repeat(1, 1fr);
+		grid-template-rows: repeat(3, 10em);
+	}
+
+    #sectionactivite a {
+        height: 10rem;
+    }
+
+    footer{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

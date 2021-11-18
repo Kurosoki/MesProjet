@@ -1,0 +1,44 @@
+
+* {
+  margin:0;
+  padding:0;
+}
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+html {
+  line-height: 1.15; /* 1 */
+}
+
+
+
+h1 {
+  font-size: 2em;
+}
+
+ul {
+  list-style: none;
+}
+
+.stop{
+  clear:both;
+}
+
+/*strong {
+  font-weight:normal;
+}*/
+
+img {
+  border-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+br{
+ margin-bottom: 10px;
+}

@@ -129,11 +129,7 @@ main{
     border: 2px solid #efefef;
 }
 
-.sectionrechercher form i.fa-search {
-    display: none;
-  }  
-
-.sectionrechercher form span{
+.sectionrechercher form button{
     background-color: #0065FC;
     border: none;
     color: white;
@@ -145,6 +141,10 @@ main{
     font-weight: bold;
     font-size: 16px;
 }
+
+.sectionrechercher form i.fa-search {
+    display: none;
+  }  
 
 .Filtres{
     display: flex;
@@ -677,7 +677,7 @@ footer{
 		border:none;
 	}
 
-    .sectionrechercher form span {
+    .sectionrechercher form button {
         display: none;
       } 
       

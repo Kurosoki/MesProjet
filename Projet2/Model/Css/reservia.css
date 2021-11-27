@@ -129,7 +129,11 @@ main{
     border: 2px solid #efefef;
 }
 
-.sectionrechercher form button{
+.sectionrechercher form i.fa-search {
+    display: none;
+  }  
+
+.sectionrechercher form span{
     background-color: #0065FC;
     border: none;
     color: white;
@@ -672,6 +676,23 @@ footer{
 	.menu-right li a.inscription:hover {
 		border:none;
 	}
+
+    .sectionrechercher form span {
+        display: none;
+      } 
+      
+    .sectionrechercher form i.fa-search {
+        background-color: #0065FC;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 0 15px 15px 0;
+        font-weight: bold;
+        font-size: 16px;
+    } 
 
     #sectionhebergement .hotel-cartes {
         display: grid;

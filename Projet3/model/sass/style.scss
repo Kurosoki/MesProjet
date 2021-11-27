@@ -1,0 +1,32 @@
+@import "utils/mixins";
+@import "utils/normalizer";
+@import "utils/variables";
+
+@import "layout/header";
+@import "layout/footer";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');
+
+
+body { 
+    font-family: 'Roboto' sans-serif;
+
+    main{
+        .Top{
+            background:$gris-clair;
+            padding: 2.5rem 1rem 4.6rem 1rem;
+            text-align: center;
+            h2{
+                font-size: 18px;
+                font-weight: bold;
+                margin: 0 2rem 0.7rem 2rem;
+            }
+            p{
+                font-size: 1.1rem;
+                color: $grey;
+                margin-bottom: 2.8rem;
+            }
+        }
+    }
+}
+

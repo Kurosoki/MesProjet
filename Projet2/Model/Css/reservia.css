@@ -178,7 +178,7 @@ main{
 .Filtres .btn:hover{
     color: #0065FC;
     background-color: #d6e7ff;
-    border-color: #d6e7ff;
+    border-color: 214, 231, 255;
 }
 
 .Filtres .btn:before{
@@ -681,17 +681,24 @@ footer{
         display: none;
       } 
       
+    .sectionrechercher form input{
+        border: none;
+        padding: 15px 15px;
+        font-weight: bold;
+        font-size: 15px;
+        width: 60%;
+    }   
     .sectionrechercher form i.fa-search {
         background-color: #0065FC;
         border: none;
         color: white;
-        padding: 15px 32px;
+        padding: 20px 20px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        border-radius: 0 15px 15px 0;
+        border-radius: 18px 18px 18px 18px;
         font-weight: bold;
-        font-size: 16px;
+        font-size: 17px;
     } 
 
     #sectionhebergement .hotel-cartes {

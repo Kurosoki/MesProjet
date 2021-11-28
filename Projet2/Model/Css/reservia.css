@@ -178,7 +178,7 @@ main{
 .Filtres .btn:hover{
     color: #0065FC;
     background-color: #d6e7ff;
-    border-color: 214, 231, 255;
+    border-color: #d2e3fc;
 }
 
 .Filtres .btn:before{

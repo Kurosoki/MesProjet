@@ -1,32 +1,323 @@
 @import "utils/mixins";
 @import "utils/normalizer";
 @import "utils/variables";
+@import "utils/components";
 
 @import "layout/header";
 @import "layout/footer";
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');
 
+/* Début Header */
+header {
+    @extend %grid-center;
+    @include grid-template-set ($header);
+    padding: 1em;
+}
+h1 {
+    @include grid-pos-set (1, auto, 1, auto);
+    font-family: 'Shrikhand', cursive;
+}
+.btn__retourHome {
+    @include grid-pos-set (1, auto, 1, auto);
+    justify-self: start;
+}
+/* Fin Header */
 
-body { 
-    font-family: 'Roboto' sans-serif;
+/* Début Main */
+main {
+    font-family: 'Roboto', sans-serif;
+}
 
-    main{
-        .Top{
-            background:$gris-clair;
-            padding: 2.5rem 1rem 4.6rem 1rem;
-            text-align: center;
-            h2{
-                font-size: 18px;
-                font-weight: bold;
-                margin: 0 2rem 0.7rem 2rem;
-            }
-            p{
-                font-size: 1.1rem;
-                color: $grey;
-                margin-bottom: 2.8rem;
+    /* Debut section localisation */
+    .localisation {
+        @extend %grid-center;
+        @include grid-template-set ($localisation);
+        padding: 1em;
+        background: #eaeaea;
+        background: linear-gradient(
+            180deg,
+             rgba(173,173,173,.35) 0%,
+             rgba(234,234,234,.75) 15%,
+             rgba(234,234,234,1) 100%); 
+        & i {
+            padding: 0 0.5em 0 0;
+        }
+    }
+    /* Fin section localisation */
+
+    /* Debut section presentation */
+    .presentation {
+        @extend %grid-center;
+        @include grid-template-set ($presentation);
+        padding: 2em 0 3em;
+        background: #f6f6f6;
+        text-align: center;
+
+        & h2 {
+            padding: 0 5em;
+        }
+        & p {
+            padding: 1em 5em 2em;
+        }
+    }
+    /* Fin section presentation */
+
+    /* Debut section commentCaMarche */
+    .commentCaMarche {
+        @extend %grid-center;
+        @include grid-template-set (1);
+        padding: 3em 1em;
+
+        & h2 {
+            @include grid-pos-set (1, auto, 1, 2);
+            justify-self: start;
+        }
+        & ol {
+            @include grid-pos-set (2, auto, 1, 4);
+            display: grid;
+            @include grid-template-set ($commentCaMarche);
+            grid-gap: 2em;
+            margin: 1em 1em 0;
+            justify-self: normal;
+            counter-reset: section;
+        }
+        & li::before {
+            counter-increment: section;
+            content: counter(section);
+            position: relative;
+            left: -1.9em;
+            padding: 0.3em 0.6em;
+            border-radius: 70%;
+            background-color: $violet-primaire;
+            color: $txt-fond-sombre;
+        }
+        & li:hover {
+            background-color: lighten($violet-primaire, 35%);
+            & i {
+                color: $violet-primaire;
             }
         }
+        & p {
+            display: inline-block;
+            position: relative;
+            left: -0.7em;
+        }
+        & i {
+            padding: 0 1em 0 0;
+        }
+    }
+    /* Fin section commentCaMarche */
+    
+    /* Debut section lesRestaurants */
+    .lesRestaurants {
+        @extend %grid-center;
+        @include grid-template-set (1);
+        padding: 3em 1em;
+        background: #f6f6f6;
+
+        & h2 {
+            @include grid-pos-set (1, auto, 1, 2);
+            justify-self: start;
+        }
+        & ul {
+            @include grid-pos-set (2, auto, 1, 5);
+            display: grid;
+            @include grid-template-set ($lesRestaurants);
+            grid-gap: 2em;
+            justify-self: normal;
+            margin: 1em 0;
+        }
+        & li {
+            display: inline-block;
+            width: 100%;
+        }
+        & a {
+            display: block;
+            position: relative;
+            padding: 0 0 0.7rem 0;
+            color: $txt-fond-clair;
+            border-radius: 1.5em;
+            box-shadow: 0 3px 10px rgb(0, 0, 0, 0.2);
+
+            & .sticker {
+                position: absolute;
+                right: 1em;
+                top: 1em;
+                padding: 0.4em 0.6em;
+                color: $txt-fond-vert;
+                background: $vert-clair;
+                border-radius: 0.2em;
+            }
+            & img {
+                padding: 0 0 0.5rem 0;
+                width: 100%;
+                height: 12.5em;
+                object-fit: cover;
+                border-radius: 1.5em 1.5em 0 0;
+            }
+            & h3, p {
+                padding: 0 1rem 0.5rem;
+            }
+            & .btn__like {
+                position: absolute;
+                bottom: 2.5rem;
+                right: 1.5rem;
+                font-size: 1.5em;
+                cursor: pointer;
+            }
+        }
+    }  
+    /* Fin section lesRestaurants */
+
+    /* Début section menuDuResto */
+    .menuDuResto {
+        @extend %grid-center;
+        @include grid-template-set (1);
+        padding: 0 0 3em;
+        justify-items: normal;
+        background: #f6f6f6;
+
+        &__cover{
+            margin: 0 0 -5em 0;
+            width: 100%;
+            object-fit: cover;
+            height: 20em;
+        }
+        &__carte{
+            padding: 2em 1em 0;
+            background-color: #f6f6f6;
+            border-radius: 3em 3em 0 0;
+        }
+
+        & h2{
+            @include grid-pos-set (1,auto,1,1);
+            justify-self: start;
+            margin: 0 0 1em;
+            font-family: 'Shrikhand', cursive;
+            font-size: 2em;
+            display: flex;
+            justify-content: space-between;
+            & button{
+                justify-self:right;
+                margin: 0 0 0 2rem;
+                font-size: 1em;
+                position: relative;
+            }
+        }
+        & h3{
+            @include grid-pos-set (2, auto, 1, 4);
+            justify-self: start;
+            @extend %border-length-var;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+        & ul{
+            @include grid-pos-set (3, auto, 1, 4);
+            display: grid;
+            @include grid-template-set (3);
+            margin: 1em 0 2.5em;
+            justify-self: normal;
+        }
+        & li{
+            margin-bottom: 15px;
+        }
+    }
+    /* Fin section menuDuResto */
+
+/* Fin Main */
+
+/* Début Footer */
+footer {
+    @extend %grid-center;
+    @include grid-template-set ($footer);
+    padding: 1em;
+    color: $txt-fond-sombre;
+    background: #353535;
+    font-family: 'Roboto', sans-serif;
+}
+footer h2 {
+    @include grid-pos-set (1, auto, 1, auto);
+    margin: 0 0 1.5rem 0;
+    font-family: 'Shrikhand', cursive;
+    font-size: 1.4em;
+    font-weight: normal;
+    justify-self: start;
+}
+footer ul {
+    @include grid-pos-set (2, auto, 1, 4);
+    justify-self: start;
+    & li {
+        margin: 0 0 0.5rem 0;
+    }
+}
+footer a {
+    color: $txt-fond-sombre;
+    & .fa-utensils {
+        padding: 0 1rem 0 0;
+    }
+    & .fa-hands-helping {
+        padding: 0 0.55rem 0 0;
     }
 }
 
+/* Fin Footer */
+
+
+/* media queries */
+@media (max-width: 1270px) {
+    .lesRestaurants ul {
+        @include grid-pos-set (2, auto, 1, 3);
+        @include grid-template-set (2);
+    }
+    .menuDuResto ul {
+        @include grid-pos-set (3, auto, 1, 3);
+        @include grid-template-set (2);
+    }
+}
+
+@media (max-width: 960px) {
+    .commentCaMarche ol {
+        @include grid-pos-set (2, auto, 1, 2);
+        @include grid-template-set (1);
+    }
+    .menuDuResto ul {
+        @include grid-pos-set (3, auto, 1, 3);
+        @include grid-template-set (1);
+    }
+}
+
+@media (max-width: 680px) {
+    .commentCaMarche ol {
+        @include grid-pos-set (2, auto, 1, 2);
+        @include grid-template-set (1);
+    }
+    .fa-mobile-alt:before {
+        padding: 0 0.7em 0 0;
+    }
+    .fa-list-ul:before {
+        padding: 0 0.3em 0 0;
+    }
+    .lesRestaurants ul {
+        @include grid-pos-set (2, auto, 1, 2);
+        @include grid-template-set (1);
+    }
+}
+
+@media (max-width: 480px) {
+    .presentation h2 {
+        padding: 0 2em;
+    }
+    .presentation p {
+        padding: 1em 2em 2em;
+    }
+    .menuDuResto h2 {
+        font-size: 1.7em;
+    }
+    .menuDuResto .list-item {
+        font-size: 0.8em;
+    }
+    .menuDuResto .list-item:hover p {
+        width: 60%;
+    }
+}

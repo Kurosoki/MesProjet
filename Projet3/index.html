@@ -9,33 +9,34 @@
     rel="stylesheet"
     href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-    crossorigin="anonymous"
-  />
+    crossorigin="anonymous"/>
     <title>OhMyFood</title>
 </head>
 <body>
+    
     <!-- Début du header -->
     <header>    
-        <h1 class="logo"><a href="index.html">Ohmyfood</a></h1>
-        <section class="placefinder">
-            <i class="fas fa-map-marker-alt"></i>
-            <input type="search" name="placefinder" placeholder="Paris, Belleville">
-        </section>
+        <a href="#"><img class="Logo" src="model/img/ohmyfood.png" alt="Logo-Ohmyfood"/></a>
     </header>
     <!-- Fin header -->
 
     <!-- Début du main -->
     <main>
-        <!-- Début de la section Topside -->
-        <section class="Top">
+
+        <section class="localisation">
+            <h3><i class="fas fa-map-marker-alt"></i>Paris, Belleville</h3>
+        </section>
+        
+        <!-- Début de la section presentation -->
+        <section class="presentation">
             <h2>Réservez le menu qui vous convient</h2>
             <p>Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
             <a class="btn btn--gradient btn--radius" href="#">Explorer nos restaurants</a>
         </section>
-        <!-- Fin de la section Topside -->
+        <!-- Fin de la section presentation -->
 
         <!-- Début de la section Fontionnement -->
-        <section class="Fontionnement">
+        <section class="commentCaMarche">
             <h2>Fonctionnement</h2>
             <ol>
                 <li class="list-item">
@@ -52,28 +53,30 @@
         <!-- Fin de la section Fontionnement -->
 
         <!-- Début de la section Restaurants -->
-        <section class="Restaurants">
+        <section class="lesRestaurants">
             <h2>Restaurants</h2>
             <ul>
                 <li>
                     <a href="pages/lapalettedugout.html">
-                        <span>Nouveau</span>
+                        <span class="sticker sticker__new">Nouveau</span>
                         <img src="model/img/laPaletteDuGout-s.png" alt="La palette du goût - Ménilmontant">
                         <h3>La palette du goût</h3>
                         <p>Ménilmontant</p>
                         <span class="btn__like">
                             <i class="far fa-heart heart-away"></i>
+                            <i class="fas fa-heart heart-hover"></i>
                         </span>
                     </a>
                 </li>
                 <li>
                     <a href="pages/lanoteenchantee.html">
-                        <span >Nouveau</span>
+                        <span class="sticker sticker__new">Nouveau</span>
                         <img src="model/img/laNoteEnchantee-s.png" alt="La note enchantée - Charonne">
                         <h3>La note enchantée</h3>
                         <p>Charonne</p>
                         <span class="btn__like">
                             <i class="far fa-heart heart-away"></i>
+                            <i class="fas fa-heart heart-hover"></i>
                         </span>
                     </a>
                 </li>
@@ -84,6 +87,7 @@
                         <p>Cité Rouge</p>
                         <span class="btn__like">
                             <i class="far fa-heart heart-away"></i>
+                            <i class="fas fa-heart heart-hover"></i>
                         </span>
                     </a>
                 </li>
@@ -94,6 +98,7 @@
                         <p>Folie-Méricourt</p>
                         <span class="btn__like">
                             <i class="far fa-heart heart-away"></i>
+                            <i class="fas fa-heart heart-hover"></i>
                         </span>
                     </a>
                 </li>
@@ -106,15 +111,13 @@
 
     <!-- Début du footer -->
     <footer>
-        <section>
-            <h2>Ohmyfood</h2>
-            <ul>
-                <li><a href="#"><i class="fas fa-utensils"></i>Proposer un restaurant</a></li>
-                <li><a href="#"><i class="fas fa-hands-helping"></i>Devenir partenaire</a></li>
-                <li><a href="#">Mentions légales</a></li>
-                <li><a href="mailto:contact@ohmyfood.com">Contact</a></li>
-            </ul>
-        </section>
+        <h2>Ohmyfood</h2>
+        <ul>
+            <li><a href="#"><i class="fas fa-utensils"></i>Proposer un restaurant</a></li>
+            <li><a href="#"><i class="fas fa-hands-helping"></i>Devenir partenaire</a></li>
+            <li><a href="#">Mentions légales</a></li>
+            <li><a href="mailto:contact@ohmyfood.com">Contact</a></li>
+        </ul>
     </footer>
     <!-- Fin du footer -->
 </body>

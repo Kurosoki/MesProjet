@@ -1,1 +1,29 @@
 @use "../utils/variables";
+
+footer {
+    font-family: 'shrikhand',cursive;
+    @include grid-template-set ($footer);
+    padding: 2em 2em;
+    background: $gris-sombre;
+    color: $txt-fond-sombre;
+
+& h2{
+    font-size: 18px;
+    padding-bottom: 15px;
+}
+
+& ul {
+    line-height: 25px;
+}
+
+& a {
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    color: $txt-fond-sombre;
+}
+
+& i.fa-utensils, i.fa-hands-helping {
+    padding-right: 1em ;
+}
+
+}

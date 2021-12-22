@@ -1,36 +1,24 @@
 
+@mixin grid-template-set($section) {
+    @if ($section == "header"){
+        $section: $grid-columns-header;
+    } @else if ($section == "localisation"){
+        $section: $grid-columns-localisation;
+    } @else if ($section == "presentation"){
+        $section: $grid-columns-presentation;
+    } @else if  ($section == "commentCaMarche"){
+        $section: $grid-columns-commentCaMarche;
+    } @else if ($section == "lesRestaurants"){
+        $section: $grid-columns-lesRestaurants;
+    } @else if ($section == "footer"){
+        $section: $grid-columns-footer;
+    }
 
-@mixin shadow {
-    box-shadow: 0 0.3px 1.3px -5px rgba(0, 0, 0, 0.35),
-    0 2px 8px -5px rgba(0, 0, 0, 0.7);
-    animation: heartanimation 5s;
+    grid-template-columns: repeat($section, 1fr);
 }
 
-@keyframes heartanimation {
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-}
-
-.btn{
-    padding: 1em 1.5em;
-    color: white;
-    &--gradient{
-        background-image: 
-        radial-gradient(
-            100% 50% at 20% 10%,
-            #FF79DA 0%,
-            #9356DC 200%);
-    }
-
-    &--radius {
-        border-radius: 2em;
-    }
-    &:hover{
-        opacity: 0.8;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
+//Grid position
+@mixin grid-pos-set ($row-start, $row-end, $col-start, $col-end){
+    grid-row: $row-start unquote("/") $row-end;
+    grid-column: $col-start unquote("/") $col-end; 
 }

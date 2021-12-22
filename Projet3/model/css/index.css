@@ -1,15 +1,74 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
-@keyframes heartanimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+* {
+  margin: 0;
+  padding: 0;
 }
+
+html {
+  line-height: 1.15;
+  /* 1 */
+}
+
+h1 {
+  font-size: 2em;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.stop {
+  clear: both;
+}
+
+strong {
+  font-weight: normal;
+}
+
+img {
+  border-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+br {
+  margin-bottom: 10px;
+}
+
+footer, .menuDuResto, .lesRestaurants, .commentCaMarche, .presentation, .localisation, header {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.menuDuResto h3::after {
+  border-bottom: 3px #99E2D0 solid;
+  content: "";
+  display: block;
+  width: 3rem;
+}
+
+.list-item {
+  padding: 1.5em 1em;
+  text-align: left;
+  border-radius: 1em;
+  box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
+}
+
 .btn {
   padding: 1em 1.5em;
-  color: white;
+  color: #ffffff;
+  transition: 250ms;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 .btn--gradient {
   background-image: radial-gradient(100% 50% at 20% 10%, #FF79DA 0%, #9356DC 200%);
@@ -22,135 +81,397 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
-html,
-body,
-p,
-ol,
-ul,
-li,
-dl,
-dt,
-dd,
-blockquote,
-figure,
-fieldset,
-legend,
-textarea,
-pre,
-iframe,
-hr,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  padding: 0;
+.btn__like .heart-away, button .heart-away {
+  display: block;
+  transform: scale(1);
+  transition: all 0.5s;
+}
+.btn__like .heart-hover, button .heart-hover {
+  display: block;
+  position: absolute;
+  top: 0;
+  transform: scale(0);
+  transition: all 0.5s;
+  background-image: linear-gradient(0deg, #FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 100%;
-  font-weight: normal;
+.btn__like:hover .heart-away, button:hover .heart-away {
+  opacity: 0;
+  transform: scale(0);
 }
-
-ul {
-  list-style: none;
-}
-
-button,
-input,
-select {
-  margin: 0;
-}
-
-html {
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-img,
-video {
-  height: auto;
-  max-width: 100%;
-}
-
-iframe {
-  border: 0;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-td,
-th {
-  padding: 0;
+.btn__like:hover .heart-hover, button:hover .heart-hover {
+  opacity: 1;
+  transform: scale(1);
 }
 
 header h1 {
   font-family: "shrikhand", cursive;
 }
 
-header .logo {
-  width: 100%;
-  height: 50px;
-  text-align: center;
-  margin-top: 20px;
+header {
+  grid-template-columns: repeat(1, 1fr);
+  padding: 1em;
 }
-header a {
-  color: #353535;
-  text-decoration: none;
-  font-size: 22px;
+header h1 {
+  font-family: "Shrikhand", cursive;
+  grid-row: 1 / auto;
+  grid-column: 1 / auto;
 }
-header .placefinder {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #e2e2e2;
-  padding-right: 1rem;
+header i.fa-arrow-left {
+  position: absolute;
+  font-size: 20px;
+  left: 2em;
+  top: 1.2em;
 }
-header .placefinder input {
-  width: 9rem;
-  text-align: right;
-  border: 1px transparent;
-  outline: none;
-  padding: 0.9rem 0rem;
-  background: #e2e2e2;
-  font-size: 1rem;
-  font-weight: bold;
-}
-header .placefinder input::placeholder {
-  color: #353535;
+header img {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-body {
-  font-family: "Roboto" sans-serif;
+footer {
+  font-family: "shrikhand", cursive;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 2em 2em;
+  background: #353535;
+  color: #ffffff;
 }
-body main .Top {
-  background: #e2e2e2;
-  padding: 2.5rem 1rem 4.6rem 1rem;
+footer h2 {
+  font-size: 18px;
+  padding-bottom: 15px;
+}
+footer ul {
+  line-height: 25px;
+}
+footer a {
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+}
+footer i.fa-utensils, footer i.fa-hands-helping {
+  padding-right: 1em;
+}
+
+/* Début Header */
+header {
+  grid-template-columns: repeat(1, 1fr);
+  padding: 1em;
+}
+
+h1 {
+  grid-row: 1 / auto;
+  grid-column: 1 / auto;
+  font-family: "Shrikhand", cursive;
+}
+
+.btn__retourHome {
+  grid-row: 1 / auto;
+  grid-column: 1 / auto;
+  justify-self: start;
+}
+
+/* Fin Header */
+/* Début Main */
+main {
+  font-family: "Roboto", sans-serif;
+}
+
+/* Debut section localisation */
+.localisation {
+  grid-template-columns: repeat(1, 1fr);
+  padding: 1em;
+  background: #eaeaea;
+  background: linear-gradient(180deg, rgba(173, 173, 173, 0.35) 0%, rgba(234, 234, 234, 0.75) 15%, #eaeaea 100%);
+}
+.localisation i {
+  padding: 0 0.5em 0 0;
+}
+
+/* Fin section localisation */
+/* Debut section presentation */
+.presentation {
+  grid-template-columns: repeat(1, 1fr);
+  padding: 2em 0 3em;
+  background: #f6f6f6;
   text-align: center;
 }
-body main .Top h2 {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 0 2rem 0.7rem 2rem;
+.presentation h2 {
+  padding: 0 5em;
 }
-body main .Top p {
-  font-size: 1.1rem;
-  color: #656565;
-  margin-bottom: 2.8rem;
+.presentation p {
+  padding: 1em 5em 2em;
+}
+
+/* Fin section presentation */
+/* Debut section commentCaMarche */
+.commentCaMarche {
+  grid-template-columns: repeat(1, 1fr);
+  padding: 3em 1em;
+}
+.commentCaMarche h2 {
+  grid-row: 1 / auto;
+  grid-column: 1 / 2;
+  justify-self: start;
+}
+.commentCaMarche ol {
+  grid-row: 2 / auto;
+  grid-column: 1 / 4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2em;
+  margin: 1em 1em 0;
+  justify-self: normal;
+  counter-reset: section;
+}
+.commentCaMarche li::before {
+  counter-increment: section;
+  content: counter(section);
+  position: relative;
+  left: -1.9em;
+  padding: 0.3em 0.6em;
+  border-radius: 70%;
+  background-color: #9356DC;
+  color: #ffffff;
+}
+.commentCaMarche li:hover {
+  background-color: #f2eafb;
+}
+.commentCaMarche li:hover i {
+  color: #9356DC;
+}
+.commentCaMarche p {
+  display: inline-block;
+  position: relative;
+  left: -0.7em;
+}
+.commentCaMarche i {
+  padding: 0 1em 0 0;
+}
+
+/* Fin section commentCaMarche */
+/* Debut section lesRestaurants */
+.lesRestaurants {
+  grid-template-columns: repeat(1, 1fr);
+  padding: 3em 1em;
+  background: #f6f6f6;
+}
+.lesRestaurants h2 {
+  grid-row: 1 / auto;
+  grid-column: 1 / 2;
+  justify-self: start;
+}
+.lesRestaurants ul {
+  grid-row: 2 / auto;
+  grid-column: 1 / 5;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2em;
+  justify-self: normal;
+  margin: 1em 0;
+}
+.lesRestaurants li {
+  display: inline-block;
+  width: 100%;
+}
+.lesRestaurants a {
+  display: block;
+  position: relative;
+  padding: 0 0 0.7rem 0;
+  color: #000000;
+  border-radius: 1.5em;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+.lesRestaurants a .sticker {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  padding: 0.4em 0.6em;
+  color: #008766;
+  background: #99e2d0;
+  border-radius: 0.2em;
+}
+.lesRestaurants a img {
+  padding: 0 0 0.5rem 0;
+  width: 100%;
+  height: 12.5em;
+  object-fit: cover;
+  border-radius: 1.5em 1.5em 0 0;
+}
+.lesRestaurants a h3, .lesRestaurants a p {
+  padding: 0 1rem 0.5rem;
+}
+.lesRestaurants a .btn__like {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 1.5rem;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+/* Fin section lesRestaurants */
+/* Début section menuDuResto */
+.menuDuResto {
+  grid-template-columns: repeat(1, 1fr);
+  padding: 0 0 3em;
+  justify-items: normal;
+  background: #f6f6f6;
+}
+.menuDuResto__cover {
+  margin: 0 0 -5em 0;
+  width: 100%;
+  object-fit: cover;
+  height: 20em;
+}
+.menuDuResto__carte {
+  padding: 2em 1em 0;
+  background-color: #f6f6f6;
+  border-radius: 3em 3em 0 0;
+}
+.menuDuResto h2 {
+  grid-row: 1 / auto;
+  grid-column: 1 / 1;
+  justify-self: start;
+  margin: 0 0 1em;
+  font-family: "Shrikhand", cursive;
+  font-size: 2em;
+  display: flex;
+  justify-content: space-between;
+}
+.menuDuResto h2 button {
+  justify-self: right;
+  margin: 0 0 0 2rem;
+  font-size: 1em;
+  position: relative;
+}
+.menuDuResto h3 {
+  grid-row: 2 / auto;
+  grid-column: 1 / 4;
+  justify-self: start;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+.menuDuResto ul {
+  grid-row: 3 / auto;
+  grid-column: 1 / 4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 1em 0 2.5em;
+  justify-self: normal;
+}
+.menuDuResto li {
+  margin-bottom: 15px;
+}
+
+/* Fin section menuDuResto */
+/* Fin Main */
+/* Début Footer */
+footer {
+  grid-template-columns: repeat(3, 1fr);
+  padding: 1em;
+  color: #ffffff;
+  background: #353535;
+  font-family: "Roboto", sans-serif;
+}
+
+footer h2 {
+  grid-row: 1 / auto;
+  grid-column: 1 / auto;
+  margin: 0 0 1.5rem 0;
+  font-family: "Shrikhand", cursive;
+  font-size: 1.4em;
+  font-weight: normal;
+  justify-self: start;
+}
+
+footer ul {
+  grid-row: 2 / auto;
+  grid-column: 1 / 4;
+  justify-self: start;
+}
+footer ul li {
+  margin: 0 0 0.5rem 0;
+}
+
+footer a {
+  color: #ffffff;
+}
+footer a .fa-utensils {
+  padding: 0 1rem 0 0;
+}
+footer a .fa-hands-helping {
+  padding: 0 0.55rem 0 0;
+}
+
+/* Fin Footer */
+/* media queries */
+@media (max-width: 1270px) {
+  .lesRestaurants ul {
+    grid-row: 2 / auto;
+    grid-column: 1 / 3;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .menuDuResto ul {
+    grid-row: 3 / auto;
+    grid-column: 1 / 3;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 960px) {
+  .commentCaMarche ol {
+    grid-row: 2 / auto;
+    grid-column: 1 / 2;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .menuDuResto ul {
+    grid-row: 3 / auto;
+    grid-column: 1 / 3;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 680px) {
+  .commentCaMarche ol {
+    grid-row: 2 / auto;
+    grid-column: 1 / 2;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .fa-mobile-alt:before {
+    padding: 0 0.7em 0 0;
+  }
+
+  .fa-list-ul:before {
+    padding: 0 0.3em 0 0;
+  }
+
+  .lesRestaurants ul {
+    grid-row: 2 / auto;
+    grid-column: 1 / 2;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .presentation h2 {
+    padding: 0 2em;
+  }
+
+  .presentation p {
+    padding: 1em 2em 2em;
+  }
+
+  .menuDuResto h2 {
+    font-size: 1.7em;
+  }
+
+  .menuDuResto .list-item {
+    font-size: 0.8em;
+  }
+
+  .menuDuResto .list-item:hover p {
+    width: 60%;
+  }
 }

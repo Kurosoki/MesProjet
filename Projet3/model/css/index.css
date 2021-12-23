@@ -106,6 +106,71 @@ footer, .menuDuResto, .lesRestaurants, .commentCaMarche, .presentation, .localis
   transform: scale(1);
 }
 
+.loader {
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #FC6042;
+  animation: 1s fadeout 2000ms ease forwards;
+}
+.loader .spinner {
+  width: 8vmax;
+  height: 8vmax;
+  border-right: 4px solid #ffffff;
+  border-radius: 100%;
+  animation: spinRight 800ms linear infinite;
+}
+.loader .spinner:before, .loader .spinner:after {
+  content: "";
+  width: 6vmax;
+  height: 6vmax;
+  display: block;
+  position: absolute;
+  top: calc(50% - 3vmax);
+  left: calc(50% - 3vmax);
+  border-left: 3px solid #ffffff;
+  border-radius: 100%;
+  animation: spinLeft 800ms linear infinite;
+}
+.loader .spinner:after {
+  width: 4vmax;
+  height: 4vmax;
+  top: calc(50% - 2vmax);
+  left: calc(50% - 2vmax);
+  border: 0;
+  border-right: 2px solid #ffffff;
+  animation: none;
+}
+
+@keyframes spinLeft {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(720deg);
+  }
+}
+@keyframes spinRight {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
 header h1 {
   font-family: "shrikhand", cursive;
 }
@@ -341,7 +406,6 @@ main {
   justify-content: space-between;
 }
 .menuDuResto h2 button {
-  justify-self: right;
   margin: 0 0 0 2rem;
   font-size: 1em;
   position: relative;
@@ -360,9 +424,107 @@ main {
   grid-template-columns: repeat(3, 1fr);
   margin: 1em 0 2.5em;
   justify-self: normal;
+  gap: 2em;
 }
-.menuDuResto li {
-  margin-bottom: 15px;
+.menuDuResto .list-item {
+  position: relative;
+  padding: 1em;
+  cursor: pointer;
+  overflow: hidden;
+  font-size: 1.05em;
+}
+.menuDuResto h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1em;
+}
+.menuDuResto p {
+  font-size: 1em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 85%;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+.menuDuResto strong {
+  position: absolute;
+  right: 2rem;
+  bottom: 1rem;
+  transition: all 0.5s;
+  font-weight: 600;
+}
+.menuDuResto span {
+  position: absolute;
+  top: 0;
+  right: -5rem;
+  width: 5rem;
+  height: 100%;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  background: #99E2D0;
+  transition: all 0.5s;
+}
+.menuDuResto .fa-check-circle {
+  transform: rotate(-240deg);
+  transition: all 0.5s;
+}
+.menuDuResto .list-item {
+  opacity: 0;
+  animation: showingDishes 1000ms forwards;
+}
+.menuDuResto .list-item--1 {
+  animation-delay: 111.1111111111ms;
+}
+.menuDuResto .list-item--2 {
+  animation-delay: 222.2222222222ms;
+}
+.menuDuResto .list-item--3 {
+  animation-delay: 333.3333333333ms;
+}
+.menuDuResto .list-item--4 {
+  animation-delay: 444.4444444444ms;
+}
+.menuDuResto .list-item--5 {
+  animation-delay: 555.5555555556ms;
+}
+.menuDuResto .list-item--6 {
+  animation-delay: 666.6666666667ms;
+}
+.menuDuResto .list-item--7 {
+  animation-delay: 777.7777777778ms;
+}
+.menuDuResto .list-item--8 {
+  animation-delay: 888.8888888889ms;
+}
+.menuDuResto .list-item--9 {
+  animation-delay: 1000ms;
+}
+@keyframes showingDishes {
+  0% {
+    transform: translateY(2em);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.menuDuResto .list-item:hover p {
+  width: 67%;
+}
+.menuDuResto .list-item:hover strong {
+  right: 6.5rem;
+}
+.menuDuResto .list-item:hover span {
+  right: 0;
+}
+.menuDuResto .list-item:hover span i {
+  transform: rotate(0deg);
+}
+.menuDuResto a {
+  padding: 1em 2.5em;
+  justify-self: center;
 }
 
 /* Fin section menuDuResto */
